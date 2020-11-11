@@ -1,0 +1,20 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_binary(
+    name = "cgorust",
+    embed = [":cgorust_lib"],
+    visibility = ["//visibility:public"],
+)
+
+go_library(
+    name = "cgorust_lib",
+    srcs = [
+        "callbacks.go",
+        "main.go",
+        "person.h",
+    ],
+    cgo = True,
+    clinkopts = ["-Lperson-rs/target/debug -lperson"],
+    importpath = "cgorust",
+    visibility = ["//visibility:private"],
+)
