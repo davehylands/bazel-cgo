@@ -1,0 +1,7 @@
+load("@io_bazel_rules_rust//rust:rust.bzl", "rust_library")
+
+rust_library(
+    name = "person",
+    srcs = ["src/lib.rs"],
+    crate_type = "staticlib",
+)

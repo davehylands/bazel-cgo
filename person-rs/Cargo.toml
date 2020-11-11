@@ -10,15 +10,16 @@ edition = "2018"
 
 # Mandatory (or Cargo tooling is unhappy)
 [lib]
-path = "fake_lib.rs"
+name = "person_library"
+path = "src/lib.rs"
+crate-type = ["staticlib"]
 
 [package.metadata.raze]
 # The path relative path to the Bazel workspace root (location of
 # WORKSPACE.bazel/WORKSPACE file). If no workspace file is found,
 # the current working directory is used.
-workspace_path = "//cargo"
-
+workspace_path = "//person-rs/cargo"
+output_buildfile_suffix = "BUILD.bazel"
 # The target to generate BUILD rules for.
 target = "x86_64-unknown-linux-gnu"
-
 genmode = "Vendored"
