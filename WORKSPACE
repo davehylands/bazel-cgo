@@ -32,7 +32,7 @@ load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_depe
 load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 load("@io_bazel_rules_rust//rust:repositories.bzl", "rust_repositories")
 
-rust_repositories()
+rust_repositories(version = "nightly", iso_date = "2019-11-25", edition="2018")
 
 load("@io_bazel_rules_rust//:workspace.bzl", "rust_workspace")
 

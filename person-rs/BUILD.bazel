@@ -4,4 +4,5 @@ rust_library(
     name = "person",
     srcs = ["src/lib.rs"],
     crate_type = "staticlib",
+    visibility = ["//visibility:public"],
 )

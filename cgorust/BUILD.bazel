@@ -14,7 +14,7 @@ go_library(
         "person.h",
     ],
     cgo = True,
-    clinkopts = ["-Lperson-rs/target/debug -lperson"],
+    cdeps = ["//person-rs:person"],
     importpath = "cgorust",
     visibility = ["//visibility:private"],
 )
