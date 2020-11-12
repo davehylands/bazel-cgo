@@ -13,8 +13,8 @@ go_library(
         "main.go",
         "person.h",
     ],
-    cgo = True,
     cdeps = ["//person-rs:person"],
+    cgo = True,
     importpath = "cgorust",
     visibility = ["//visibility:private"],
 )

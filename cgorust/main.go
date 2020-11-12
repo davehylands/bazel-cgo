@@ -7,7 +7,6 @@
 package main
 
 /*
-#cgo LDFLAGS: -L../person-rs/target/debug -lperson
 #include "person.h"
 
 // Forward declaration of the gateway function.
