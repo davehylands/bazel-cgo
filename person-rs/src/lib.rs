@@ -4,6 +4,8 @@ use std::os::raw::{c_char, c_int, c_void};
 use std::io::{self, Write};
 use std::ptr;
 
+use titlecase::titlecase;
+
 /*
 typedef struct APerson  {
     const char * name;
@@ -47,7 +49,7 @@ impl fmt::Display for APerson {
         write!(
             formatter,
             "APerson: name: {:?}, long_name: {:?}",
-            &name, &long_name
+            &name, titlecase(&long_name.to_string_lossy())
         )
     }
 }
