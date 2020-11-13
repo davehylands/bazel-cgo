@@ -21,6 +21,7 @@ crate-type = ["staticlib"]
 # the current working directory is used.
 workspace_path = "//person-rs/cargo"
 output_buildfile_suffix = "BUILD.bazel"
+
 # The target to generate BUILD rules for.
 target = "x86_64-unknown-linux-gnu"
 genmode = "Vendored"
